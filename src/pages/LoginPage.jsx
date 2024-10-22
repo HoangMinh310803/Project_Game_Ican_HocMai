@@ -4,19 +4,20 @@ import { toast, Bounce } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
-  const { users, email, setEmail, password, setPassword } =
+  const { users, email, setEmail, password, setPassword, login } =
     useContext(AuthContext);
 
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const user = users.find(
+    const foundUser = users.find(
       (user) => user.email === email && user.password === password
     );
 
-    if (user) {
-      toast.success(`Đăng nhập thành công xin chào ${user.username}`, {
+    if (foundUser) {
+      toast.success(`Đăng nhập thành công, xin chào ${foundUser.username}`, {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -27,9 +28,13 @@ function LoginPage() {
         theme: "light",
         transition: Bounce,
       });
-      localStorage.setItem("user", JSON.stringify(user));
+
+      // Gọi hàm login với thông tin người dùng tìm thấy
+      login(foundUser);
+
+      // Chuyển hướng sau khi đăng nhập thành công
       setTimeout(() => {
-        if (user.role === "admin") {
+        if (foundUser.role === "admin") {
           navigate("/list-quiz-game-ican");
         } else {
           navigate("/");
@@ -82,32 +87,6 @@ function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember_me"
-                name="remember_me"
-                type="checkbox"
-                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-              />
-              <label
-                htmlFor="remember_me"
-                className="ml-2 block text-sm text-gray-900"
-              >
-                Nhớ tôi
-              </label>
-            </div>
-
-            <div className="text-sm">
-              <a
-                href="#"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
-              >
-                Quên mật khẩu?
-              </a>
-            </div>
           </div>
 
           <div>
