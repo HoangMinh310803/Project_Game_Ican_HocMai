@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../others/Header";
 import SidebarLeft from "../others/SidebarLeft";
-import Footer from "../others/Footer";
 import EventDetails from "../others/EventDetails";
 import SidebarRight from "../others/SidebarRight";
 
@@ -14,7 +13,6 @@ function HomePage() {
         <EventDetails />
         <SidebarRight />
       </div>
-      <Footer />
     </div>
   );
 }

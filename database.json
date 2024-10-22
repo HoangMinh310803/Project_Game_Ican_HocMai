@@ -16,5 +16,34 @@
       "full_name": "Jane Admin",
       "role": "user"
     }
+  ],
+  "quizz-list": [
+    {
+      "id": "1",
+      "title": "Những người đã làm nên 2022 của bạn",
+      "category": "Đang mở",
+      "status": "Chưa hoàn thành",
+      "description": "Trong năm qua, đã có những người thân yêu luôn ở bên và làm nên một năm 2022 thật đẹp với bạn...",
+      "game_time": "01/01/2023",
+      "img_url": "path/to/image1.png"
+    },
+    {
+      "id": "2",
+      "title": "Cover & Duet bài nhạc năm mới",
+      "category": "Đang mở",
+      "status": "Chưa hoàn thành",
+      "description": "Sử dụng âm thanh, bạn hãy thể hiện tài năng văn nghệ bằng một bản nhạc năm mới...",
+      "game_time": "01/01/2023",
+      "img_url": "path/to/image2.png"
+    },
+    {
+      "id": "3",
+      "title": "Nổi ảnh ngày Tết (thuyền xuân, hoa nhẫn, mâm ngũ quả...)",
+      "category": "Chưa mở",
+      "status": "Chưa hoàn thành",
+      "description": "Tạo ra những khung ảnh đậm không khí ngày Tết cổ truyền và chia sẻ...",
+      "game_time": "01/01/2023",
+      "img_url": "path/to/image3.png"
+    }
   ]
 }

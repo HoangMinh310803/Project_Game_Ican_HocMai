@@ -13,7 +13,13 @@ function SidebarRight() {
           <h4>1023 người tham gia</h4>
         </div>
       </div>
-      <div className="bg-pink-500 py-4 px-2 rounded">Nối âm ánh ngày Tết</div>
+      <div className="bg-pink-500 py-4 px-2 rounded">
+        Nối âm ánh ngày Tết
+        <div className="flex items-center gap-2 ">
+          <img src="../images/profile-2user.png" alt="logo" />
+          <h4>1023 người tham gia</h4>
+        </div>
+      </div>
     </aside>
   );
 }

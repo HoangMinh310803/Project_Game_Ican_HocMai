@@ -7,6 +7,10 @@ export const AuthProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Giả định mặc định là chưa đăng nhập
+
+  const login = () => setIsLoggedIn(true);
+  const logout = () => setIsLoggedIn(false);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -22,7 +26,17 @@ export const AuthProvider = ({ children }) => {
   }, []);
   return (
     <AuthContext.Provider
-      value={{ users, setUsers, email, setEmail, password, setPassword }}
+      value={{
+        users,
+        setUsers,
+        email,
+        setEmail,
+        password,
+        setPassword,
+        login,
+        logout,
+        isLoggedIn,
+      }}
     >
       {children}
     </AuthContext.Provider>
