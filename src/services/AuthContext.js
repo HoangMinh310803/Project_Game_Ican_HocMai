@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
         password,
         setPassword,
         login,
-        logout, // Thêm hàm logout
+        logout,
         isLoggedIn,
         currentUser,
       }}
